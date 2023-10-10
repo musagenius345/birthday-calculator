@@ -1,8 +1,9 @@
 <script lang="ts">
   import YearSelect from '$lib/YearSelect.svelte';
+  import NumberDisplay from '$lib/NumberDisplay.svelte'
   import MonthSelect from '$lib/MonthSelect.svelte';
   import DaySelect from '$lib/DaySelect.svelte';
-  import { differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
+  import { getDaysInMonth, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
 
 	let maxDays: number = 31
   let birthYear: number = new Date().getFullYear();
@@ -19,11 +20,8 @@
     months = differenceInMonths(currentDate, birthDate) % 12;
     days = differenceInDays(currentDate, new Date(birthDate.getFullYear() + years, birthDate.getMonth() + months, birthDate.getDate()));
   }
-
-  $: {
-    // Compute the maximum number of days based on the selected year and month
-    maxDays = new Date(birthYear, birthMonth, 0).getDate();
-  }
+$:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
+    
 </script>
 
 <div class="container">
@@ -39,22 +37,28 @@
   </div>
   <div>
     <label>Day:</label>
-    <DaySelect bind:value={birthDay} maxDays />
+    <DaySelect bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />
   </div>
 </section>
   <button on:click={calculateAge}>Calculate Age</button>
-  <pre><code>
-    {years}, {months}, {days}
-  </code></pre>
+  <main>
+    <NumberDisplay value={years} units="years" --font-size="6rem" /> 
+    <NumberDisplay value={months} units="months" /> 
+    <NumberDisplay value={years} units="days" /> 
+</main>
 </div>
-
 <style>
   .container {
-    padding: 4.2rem 3.3rem;
+    padding: 4.2rem 3rem;
     background-color: gray;
     border: 8px solid blue;
     border-radius: 8px;
     border-end-end-radius: 72px;
+    margin: 2.5rem 1.75rem;
+  }
+
+  h1{
+    font-size: 1.82rem;
   }
 
   div > * {
