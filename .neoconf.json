@@ -1,0 +1,7 @@
+{
+  "lspconfig": {
+    "cssls": true,
+    "svelte": true,
+    "tsserver": true
+  }
+}

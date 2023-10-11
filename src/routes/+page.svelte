@@ -47,7 +47,7 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     <NumberDisplay value={days} units="days" /> 
 </main>
 </div>
-<style>
+<style> 
   .container {
     padding: 4.2rem 3rem;
     background-color: gray;
