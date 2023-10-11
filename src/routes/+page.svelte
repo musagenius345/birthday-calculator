@@ -44,7 +44,7 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
   <main>
     <NumberDisplay value={years} units="years" --font-size="6rem" /> 
     <NumberDisplay value={months} units="months" /> 
-    <NumberDisplay value={years} units="days" /> 
+    <NumberDisplay value={days} units="days" /> 
 </main>
 </div>
 <style>
