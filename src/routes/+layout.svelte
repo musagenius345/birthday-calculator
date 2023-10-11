@@ -1,7 +1,13 @@
 <script> 
 	import '../pico.css'
 </script>
+  <svelte:head>
+<script src="node_modules/eruda/eruda.js"></script>
+<script>
+$:eruda.init();
+</script>
 
+</svelte:head>
 <main class="container">
   <slot></slot>
 </main>
