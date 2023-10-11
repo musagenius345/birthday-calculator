@@ -1,13 +1,8 @@
 <script>
-  export let value
+  import Input from './Input.svelte'
+  export let value;
+  let max = new Date().getFullYear()
 
-  function handleKeyDown(event) {
-    if (event.key === 'ArrowUp' && value < maxDays) {
-      value += 1;
-    } else if (event.key === 'ArrowDown' && value > 1) {
-      value -= 1;
-    }
-  }
 </script>
-
-<input type="number" on:keydown={handleKeyDown} max={new Date().getFullYear()} min="1880" bind:value={value}>
+<Input name="year" bind:value={value} min="1880" {max} placeholder="YY"/>
+ 
