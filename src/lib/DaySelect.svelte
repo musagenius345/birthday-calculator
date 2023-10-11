@@ -8,7 +8,7 @@ function dayArray(value) {
 
 </script>
 
-<select bind:value={value}>
+<select on:change bind:value={value}>
   {#each dayArray(maxDays) as day}
     <option value={day}>{day}</option>
   {/each}

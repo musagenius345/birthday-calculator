@@ -6,9 +6,9 @@
   import { getDaysInMonth, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
 
 	let maxDays: number = 31
-  let birthYear: number = new Date().getFullYear();
-  let birthMonth: number = 1;
-  let birthDay: number = 1;
+  let birthYear: number = new Date().getFullYear()
+  let birthMonth: number = new Date().getMonth() + 1
+  let birthDay: number = new Date().getDay()
   let years: number = 0;
   let months: number = 0;
   let days: number = 0;
@@ -23,21 +23,21 @@
 $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     
 </script>
-
+{@debug years }
 <div class="container">
   <h1>Birthday Calculator</h1>
   <section class="grid">
   <div>
     <label>Year:</label>
-    <YearSelect bind:value={birthYear} />
+    <YearSelect  bind:value={birthYear} />
   </div>
   <div>
     <label>Month:</label>
-    <MonthSelect bind:value={birthMonth} />
+    <MonthSelect  bind:value={birthMonth} />
   </div>
   <div>
     <label>Day:</label>
-    <DaySelect bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />
+    <DaySelect  bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />
   </div>
 </section>
   <button on:click={calculateAge}>Calculate Age</button>
