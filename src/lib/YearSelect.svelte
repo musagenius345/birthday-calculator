@@ -1,9 +1,13 @@
 <script>
-  export let value;
+  export let value
+
+  function handleKeyDown(event) {
+    if (event.key === 'ArrowUp' && value < maxDays) {
+      value += 1;
+    } else if (event.key === 'ArrowDown' && value > 1) {
+      value -= 1;
+    }
+  }
 </script>
 
-<select on:change bind:value={value}>
-  {#each Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i) as year}
-    <option value={year}>{year}</option>
-  {/each}
-</select>
+<input type="number" on:keydown={handleKeyDown} max={new Date().getFullYear()} min="1880" bind:value={value}>

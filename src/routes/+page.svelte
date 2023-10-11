@@ -11,7 +11,8 @@
   let birthDay: number = new Date().getDay()
   let years: number = 0;
   let months: number = 0;
-  let days: number = 0;
+  let days: number = 0
+  $:maxDays
 
   function calculateAge() {
     const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
