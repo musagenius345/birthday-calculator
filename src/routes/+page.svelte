@@ -50,13 +50,15 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
 <style> 
   .container {
     padding: 4.2rem 3rem;
-    background-color: gray;
+    color: var(--smoke-grey);
+    background-color: var(--white);
     border: 8px solid blue;
     border-radius: 8px;
     border-end-end-radius: 72px;
   }
 
   h1{
+    color: var(--smoke-grey);
     font-size: 1.82rem;
   }
 

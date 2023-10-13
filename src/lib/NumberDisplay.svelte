@@ -4,12 +4,19 @@
   export let size 
 </script>
 <div style="display: contents">
-  <p>{value} {units.toUpperCase()}</p>
+  <p>
+    <span class="num">{value}</span> {units.toUpperCase()}</p>
 </div>
 <style>
   p{
     --font-size: 2rem;
     font-size: var(--font-size);
+    font-weight: 700;
+    color: var(--smoke-grey);
 
+  }
+
+  .num{
+    color: var(--purple);
   }
 </style>

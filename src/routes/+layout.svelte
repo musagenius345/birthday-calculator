@@ -17,7 +17,15 @@ $:eruda.init();
 
 <style>
 /* @font-face */
-
+  :global(:root){
+  --purple: hsl(259 100% 65%);
+  --lightred: hsl(0 100% 67%);
+  --white: hsl(0 0% 100%);
+  --off-white: hsl(0 0% 94%);
+  --light-grey: hsl(0 0% 86%);
+  --smoke-grey: hsl(0 1% 44%);
+  --off-black: hsl(0 0% 8%)
+}
   :global(body){
     font-family: 'Poppins', sans-serif, Arial;
     min-height: 100vh;

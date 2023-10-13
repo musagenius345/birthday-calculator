@@ -33,4 +33,9 @@
     display: block;
     text-transform: uppercase;
   }
+
+  input{
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
 </style>
