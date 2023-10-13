@@ -33,9 +33,8 @@
 </script>
 
 <div>
-  <label class:warning={isValid} for={name}>{name}</label>
+  <label class:warning={!isValid} for={name}>{name}</label>
   <input
-    autocomplete="false"
     step="1"
     name={name}
     id={name}
@@ -48,7 +47,7 @@
     max={max}
     class:invalid={isValid === false}
   />
-  {#if isValid}
+  {#if !isValid}
     <div class="error-message">{errorMessage}</div>
   {/if}
 </div>
