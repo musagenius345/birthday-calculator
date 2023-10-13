@@ -9,9 +9,9 @@
   let birthYear: number //=new Date().getFullYear()
   let birthMonth: number //= new Date().getMonth() + 1
   let birthDay: number //= new Date().getDay()
-  let years = 0
-  let months = 0
-  let days = 0
+  let years = '--'
+  let months = '--'
+  let days = '--'
 
  let isDisabled: boolean = true;
 
@@ -33,10 +33,7 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
 <div class="container">
   <h1>Birthday Calculator</h1>
   <section class="grid">
-    <!-- <pre><code> -->
-    <!--   {birthYear},{birthMonth}, {birthDay} -->
-    <!-- </code></pre> -->
-    <YearSelect  bind:value={birthYear} />
+   <YearSelect  bind:value={birthYear} />
     <MonthSelect  bind:value={birthMonth} />
     <DaySelect  bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />  
   <button disabled={isDisabled}  on:click={calculateAge} >Calculate Age</button>
@@ -52,9 +49,14 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     padding: 4.2rem 3rem;
     color: var(--smoke-grey);
     background-color: var(--white);
-    border: 8px solid blue;
+    border: 4px solid var(--off-white);
     border-radius: 8px;
     border-end-end-radius: 72px;
+  }
+
+  button{
+    padding-block: 1.2rem;
+    border-radius: 40rem;
   }
 
   h1{
