@@ -25,7 +25,7 @@
 
  <div>
   <label for={name}>{name}:</label>
-<input name={name} id={name} type="number" bind:value={value} placeholder={placeholder} on:keydown={handleKeyDown} min={min} max={max} />
+<input autocomplete="false" step="1" name={name} id={name} type="number" bind:value={value} placeholder={placeholder} on:keydown={handleKeyDown} min={min} max={max} />
 </div>
 
 <style>

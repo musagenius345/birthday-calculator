@@ -22,11 +22,12 @@ $:eruda.init();
     font-family: 'Poppins', sans-serif, Arial;
     min-height: 100vh;
     min-height: 100dvh;
+  font-size: 32px;
   }
 
   main{
-    margin-block: 15vh;
-    margin-block: 15dvh;
+    /* margin-block: 15vh; */
+    /* margin-block: 15dvh; */
     padding: 0;
   }
 </style>
