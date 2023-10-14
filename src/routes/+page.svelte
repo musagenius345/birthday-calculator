@@ -36,27 +36,34 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
    <YearSelect  bind:value={birthYear} />
     <MonthSelect  bind:value={birthMonth} />
     <DaySelect  bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />  
-  <button disabled={isDisabled}  on:click={calculateAge} >Calculate Age</button>
+  <button disabled={isDisabled}  on:click={calculateAge} ></button>
 </section>
-  <main>
+  <section>
     <NumberDisplay value={years} units="years" --font-size="6rem" /> 
     <NumberDisplay value={months} units="months" /> 
     <NumberDisplay value={days} units="days" /> 
-</main>
+</section>
 </div>
 <style> 
   .container {
-    padding: 4.2rem 3rem;
+    padding: 1.2rem 1rem;
+    /* margin-inline: .8rem; */
     color: var(--smoke-grey);
     background-color: var(--white);
-    border: 4px solid var(--off-white);
-    border-radius: 8px;
-    border-end-end-radius: 72px;
+    /* border: 4px solid var(--off-white); */
+    border-radius: 12px;
+    border-end-end-radius: 82px;
   }
 
   button{
-    padding-block: 1.2rem;
-    border-radius: 40rem;
+    background-image: url('/assets/images/icon-arrow.svg');
+    padding: 1.2rem;
+    border: none;
+    background-color: var(--purple);
+    border-radius: 50%;
+    background-position: center;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   h1{

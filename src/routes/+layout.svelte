@@ -29,13 +29,16 @@
   :global(body){
     font-family: 'Poppins', sans-serif, Arial;
     min-height: 100vh;
+    background-color: var(--light-grey);
     min-height: 100dvh;
-  font-size: 32px;
+    font-size: 32px;
+    padding: clamp(7.5rem, 10vw, 10rem);
   }
 
   main{
     /* margin-block: 15vh; */
     /* margin-block: 15dvh; */
     padding: 0;
+    /* margin-inline: auto; */
   }
 </style>

@@ -5,12 +5,12 @@
 </script>
 <div style="display: contents">
   <p>
-    <span class="num">{value}</span> {units.toUpperCase()}</p>
+    <span class="num">{value}</span> {units}</p>
 </div>
 <style>
   p{
     --font-size: 2rem;
-    font-size: var(--font-size);
+    font-size: 3rem;
     font-weight: 700;
     color: var(--smoke-grey);
 

@@ -19,7 +19,7 @@
   function validateInput() {
     if (isNaN(value) || value < min || value > max) {
       isValid = false;
-      errorMessage = `${name} must be between ${min} and ${max}.`;
+      errorMessage = `${name}s must be between ${min} and ${max}.`;
     } else {
       isValid = true;
       errorMessage = "";
@@ -56,6 +56,7 @@
   label {
     display: block;
     text-transform: uppercase;
+    font-size: 80%;
   }
 
   input {
@@ -75,8 +76,12 @@
     margin-top: 0.5rem;
   }
 
+  .error-message::first-letter{
+    text-transform: uppercase;
+  }
+
   .invalid {
-    border: 2px var(--red) solid;
+    border: 2px var(--lightred) solid;
   }
 </style>
 
