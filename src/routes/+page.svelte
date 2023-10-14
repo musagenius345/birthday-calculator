@@ -32,11 +32,11 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
 </script>
 <div class="container">
   <h1>Birthday Calculator</h1>
-  <section class="grid">
+  <form class="grid">
    <YearSelect  bind:value={birthYear} />
     <MonthSelect  bind:value={birthMonth} />
     <DaySelect  bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />  
-</section>
+</form>
     <section class="middle">
     <div class="line"></div>
   <button disabled={isDisabled}  on:click={calculateAge} ></button>
@@ -82,6 +82,10 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     background-position: center;
     width: 3.5rem;
     height: 3.5rem;
+  }
+
+  button:is(:hover, :focus){
+    --purple: black;
   }
 
   h1{
