@@ -36,8 +36,11 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
    <YearSelect  bind:value={birthYear} />
     <MonthSelect  bind:value={birthMonth} />
     <DaySelect  bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />  
-  <button disabled={isDisabled}  on:click={calculateAge} ></button>
 </section>
+    <section class="middle">
+    <div class="line"></div>
+  <button disabled={isDisabled}  on:click={calculateAge} ></button>
+  </section>
   <section>
     <NumberDisplay value={years} units="years" --font-size="6rem" /> 
     <NumberDisplay value={months} units="months" /> 
@@ -46,16 +49,31 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
 </div>
 <style> 
   .container {
-    padding: 1.2rem 1rem;
-    /* margin-inline: .8rem; */
+    /* padding: 1.2rem auto;  */
+    padding-inline: 2.5rem;
+    padding-block: 1.8rem 1rem;
     color: var(--smoke-grey);
     background-color: var(--white);
     /* border: 4px solid var(--off-white); */
     border-radius: 12px;
     border-end-end-radius: 82px;
   }
+  .middle{
+    /* position:relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 1.2rem;
+  }
+  .line{
+    width: 100%;
+    height: 3px;
+    background-color: var(--light-grey, grey);
+  }
 
   button{
+    /* postion: absolute; */
+    /* right: 50%; */
     background-image: url('/assets/images/icon-arrow.svg');
     padding: 1.2rem;
     border: none;
