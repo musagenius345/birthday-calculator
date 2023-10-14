@@ -19,7 +19,7 @@
     isDisabled = !(birthYear !== undefined && birthMonth !== undefined && birthDay !== undefined);
   }  $:maxDays
 
- 
+
   function calculateAge() {
     const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
     const currentDate = new Date();
@@ -27,11 +27,30 @@
     months = differenceInMonths(currentDate, birthDate) % 12;
     days = differenceInDays(currentDate, new Date(birthDate.getFullYear() + years, birthDate.getMonth() + months, birthDate.getDate()));
   }
+
+
+  // function calculateAge() {
+  //   const startDate = new Date(birthYear, birthMonth - 1, birthDay);
+  //   const currentDate = new Date();
+  //   const totalMonths = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + (currentDate.getMonth() - startDate.getMonth());
+  //   years = Math.floor(totalMonths / 12);
+  //   months = totalMonths % 12;
+  //   days = startDate.getDate() - currentDate.getDate();
+  // }
+//   function calculateAge() {
+//     const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
+//     const currentDate = new Date();
+//
+//     const totalDays = differenceInDays(currentDate, birthDate);
+//     years = Math.floor(totalDays / 365);
+//     const remainingDays = totalDays % 365;
+//     months = Math.floor(remainingDays / 30); // Approximate calculation: 30 days per month
+//     days = remainingDays % 30;
+// }
 $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     
 </script>
 <div class="container">
-  <h1>Birthday Calculator</h1>
   <form class="grid">
    <YearSelect  bind:value={birthYear} />
     <MonthSelect  bind:value={birthMonth} />
@@ -51,11 +70,11 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
   .container {
     /* padding: 1.2rem auto;  */
     padding-inline: 2.5rem;
-    padding-block: 1.8rem 1rem;
+    padding-block: 3.8rem 1rem;
     color: var(--smoke-grey);
     background-color: var(--white);
     /* border: 4px solid var(--off-white); */
-    border-radius: 12px;
+    border-radius: 15px;
     border-end-end-radius: 82px;
   }
   .middle{
@@ -67,7 +86,7 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
   }
   .line{
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: var(--light-grey, grey);
   }
 
@@ -80,8 +99,8 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     background-color: var(--purple);
     border-radius: 50%;
     background-position: center;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   button:is(:hover, :focus){
