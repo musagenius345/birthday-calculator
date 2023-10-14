@@ -19,4 +19,8 @@
   .num{
     color: var(--purple);
   }
+  p:not(.num){
+    font-style: italic;
+    color: black;
+  }
 </style>
