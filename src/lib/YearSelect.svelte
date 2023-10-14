@@ -4,5 +4,5 @@
   let max = new Date().getFullYear()
 
 </script>
-<Input name="year" bind:value={value} min="1880" {max} placeholder="YY"/>
+<Input name="year" bind:value={value} min="1880" {max} placeholder="YYYY"/>
  
