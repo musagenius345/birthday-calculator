@@ -5,9 +5,10 @@
   export let placeholder;
   export let name;
 
-  let isValid = true;
+  let isValid = true ;
   let errorMessage = "";
 
+  //export let validInput =isValid
   function handleKeyDown(event) {
     if (event.key === 'ArrowUp' && value < max) {
       value += 1;
@@ -27,7 +28,7 @@
   }
 
   $: {
-    validateInput();
+    // validateInput();
     errorMessage
   }
 </script>
@@ -35,6 +36,7 @@
 <div>
   <label class:warning={!isValid} for={name}>{name}</label>
   <input
+    required
     step="1"
     name={name}
     id={name}
@@ -56,7 +58,7 @@
   label {
     display: block;
     text-transform: uppercase;
-    font-size: 80%;
+    font-weight: 500;
   }
 
   input {
@@ -73,6 +75,7 @@
   .error-message {
     color: var(--lightred);
     font-size: 1rem;
+    font-style: italic;
     margin-top: 0.5rem;
   }
 
