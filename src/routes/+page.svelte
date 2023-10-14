@@ -107,11 +107,7 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
     --purple: black;
   }
 
-  h1{
-    color: var(--smoke-grey);
-    font-size: 1.82rem;
-  }
-
+  
 
 </style>
 
