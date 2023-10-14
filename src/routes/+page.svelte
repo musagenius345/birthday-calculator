@@ -52,9 +52,9 @@ $:birthDate = new Date(`${birthYear}-${birthMonth}-${birthDay}`)
 </script>
 <div class="container">
   <form class="grid">
-   <YearSelect  bind:value={birthYear} />
-    <MonthSelect  bind:value={birthMonth} />
     <DaySelect  bind:value={birthDay} maxDays={getDaysInMonth(birthDate)} />  
+    <MonthSelect  bind:value={birthMonth} />
+   <YearSelect  bind:value={birthYear} />
 </form>
     <section class="middle">
     <div class="line"></div>
