@@ -47,7 +47,7 @@
     on:keydown={handleKeyDown}
     min={min}
     max={max}
-    class:invalid={isValid === false}
+    class:invalid={!isValid}
   />
   {#if !isValid}
     <div class="error-message">{errorMessage}</div>
